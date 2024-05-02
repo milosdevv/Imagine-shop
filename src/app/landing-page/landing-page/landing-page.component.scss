@@ -1,0 +1,18 @@
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: auto;
+  .hero__wrapper {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .discount__products-slider {
+    display: flex;
+    img {
+      width: 300px;
+      height: 300px;
+    }
+  }
+}

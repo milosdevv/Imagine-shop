@@ -1,0 +1,18 @@
+<ul class="grid">
+  <li *ngFor="let product of products">
+    <a routerLink="/product/{{ product.id }}">
+      <div
+        class="product__list-item"
+        [ngClass]="{ active: product.isActive }"
+        (click)="toggleActive(product)"
+      >
+        <img [src]="product.image" alt="{{ product.name }}" />
+        <p>{{ product.title }}</p>
+        <p>{{ product.name }} - {{ product.price | currency }}</p>
+        <p>{{ product.description }}</p>
+        <p>{{ product.category }}</p>
+        <button (click)="addToCart()">Add to cart</button>
+      </div>
+    </a>
+  </li>
+</ul>
