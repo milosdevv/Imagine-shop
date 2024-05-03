@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../Model/Product';
+import { Product } from '../../../Model/Product';
 import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-landing-page',
