@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/pages/landing-page/landing-page.component';
 import { ProductPageComponent } from './landing-page/pages/product-page/product-page.component';
-import { ProductItemComponent } from './landing-page/product-item/product-item.component';
+import { ProductItemComponent } from './landing-page/pages/product-page/product-item/product-item.component';
 import { CartPageComponent } from './landing-page/pages/cart-page/cart-page.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';

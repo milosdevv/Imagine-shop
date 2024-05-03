@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Product } from '../../Model/Product';
-import { Cart } from '../../Model/Cart';
-import { CartItem } from '../../Model/CartItem';
-import { CartService } from '../../services/cart.service';
-import { ProductServiceService } from '../../services/product.service';
+import { Product } from '../../../../Model/Product';
+import { Cart } from '../../../../Model/Cart';
+import { CartItem } from '../../../../Model/CartItem';
+import { CartService } from '../../../../services/cart.service';
+import { ProductServiceService } from '../../../../services/product.service';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 
