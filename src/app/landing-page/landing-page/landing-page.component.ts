@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../Model/Product';
-import { ProductServiceService } from '../../services/product.service';
 import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-landing-page',
@@ -22,7 +21,7 @@ export class LandingPageComponent implements OnInit {
       .get<Product[]>('https://fakestoreapi.com/products')
       .subscribe((response) => {
         this.products = response;
+        console.log(response);
       });
-    console.log('eee');
   }
 }

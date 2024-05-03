@@ -1,4 +1,11 @@
-<div class="body">
+<div class="not__found">
+  <app-not-found
+    [visible]="!cart || cart.items.length < 0"
+    notFoundMessage="Shop cart je prazan"
+    resetLinkText="Idi na pocetnu"
+  ></app-not-found>
+</div>
+<div *ngIf="cart && cart.items.length > 0" class="body">
   <ul>
     <li *ngFor="let cartItem of cart.items">
       <div>

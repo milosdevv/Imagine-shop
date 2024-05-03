@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ContactComponent } from './landing-page/contact/contact.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -30,6 +31,7 @@ const routes: Routes = [
     NavbarComponent,
     FooterComponent,
     ContactComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

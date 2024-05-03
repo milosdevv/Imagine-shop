@@ -12,14 +12,14 @@
 
   <div class="discount__products">
     <div class="discount__products-text-wrapper">
-      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h2>Popust.</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. A molestiae
         sint harum, illum maxime tenetur rerum? Magni ipsum, magnam perspiciatis
         odit provident aperiam nostrum earum!
       </p>
     </div>
-    <div class="discount__products-slider">
+    <!-- <div class="discount__products-slider">
       <swiper-container
         class="mySwiper"
         pagination="true"
@@ -27,19 +27,26 @@
         space-between="30"
         slides-per-view="3"
       >
-        <swiper-wrapper>
-          <swiper-slide>
-            <app-product-item [product]="product"></app-product-item>
-          </swiper-slide>
-        </swiper-wrapper>
-        <swiper-pagination></swiper-pagination>
-        <swiper-navigation
-          prevEl=".swiper-button-prev"
-          nextEl=".swiper-button-next"
-        ></swiper-navigation>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <swiper-slide>
+        
+        </swiper-slide>
       </swiper-container>
+    </div> -->
+    <div class="discount__product-card-wrapper">
+      <li *ngFor="let product of products | slice : 0 : 4">
+        <div class="discount__product-image">
+          <img [src]="product.image" alt="{{ product.name }}" />
+        </div>
+        <div class="discount__product-text-content">
+          {{ product.title }}
+          {{ product.price | currency }}
+          {{ product.rating }}
+          {{ product.description }}
+        </div>
+        <a routerLink="/products" class="discount__product-button">
+          Show more
+        </a>
+      </li>
     </div>
   </div>
 </div>

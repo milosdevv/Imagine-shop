@@ -8,8 +8,9 @@
     height: 100vh;
   }
 
-  .discount__products-slider {
+  .discount__product-card-wrapper {
     display: flex;
+    gap: 50px;
     img {
       width: 300px;
       height: 300px;
