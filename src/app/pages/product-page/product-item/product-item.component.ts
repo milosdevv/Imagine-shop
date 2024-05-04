@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { Product } from '../../../Model/Product';
 import { Cart } from '../../../Model/Cart';
 import { CartItem } from '../../../Model/CartItem';
@@ -21,41 +21,36 @@ export class ProductItemComponent implements OnInit {
   constructor(
     private cartService: CartService,
     private productService: ProductServiceService,
-    private http: HttpClient, // Ensure HttpClient is injected
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private changeDetector: ChangeDetectorRef
   ) {
     this.setCart();
   }
 
   isActive: boolean = false;
-  toggleActive(product: Product) {
-    this.products.forEach((p) => {
-      if (p !== product) {
-        p.isActive = false;
-      }
-    });
+  toggleActive(product: Product, event: MouseEvent) {
     product.isActive = !product.isActive;
   }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       const productId = +params.get('id');
+      console.log('Product ID:', productId);
       this.getProducts();
       this.getProductDetails(productId);
     });
   }
 
   getProducts() {
-    this.http
-      .get<Product[]>('https://fakestoreapi.com/products')
-      .subscribe((response) => {
-        this.products = response;
-      });
+    return this.productService.getProducts().subscribe((response) => {
+      this.products = response;
+    });
   }
 
   getProductDetails(id: number) {
     this.productService.getProductById(id).subscribe((data: Product) => {
       this.product = data;
+      this.changeDetector.detectChanges();
     });
   }
 

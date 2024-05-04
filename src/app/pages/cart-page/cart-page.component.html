@@ -1,56 +1,58 @@
-<div class="not__found">
-  <app-not-found
-    [visible]="!cart || cart.items.length < 0"
-    notFoundMessage="Shop cart je prazan"
-    resetLinkText="Idi na pocetnu"
-  ></app-not-found>
-</div>
-<div *ngIf="cart && cart.items.length > 0" class="body">
-  <ul>
-    <li *ngFor="let cartItem of cart.items">
-      <div>
-        <a routerLink="/product/{{ cartItem.product.id }}">
-          <img [src]="cartItem.product.image" alt="" />
-        </a>
-      </div>
-      <div>
-        <a>
-          {{ cartItem.product.productName }}
-          eeee
-        </a>
-      </div>
+<app-not-found
+  [visible]="!cart || cart.items.length <= 0"
+  notFoundMessage="Your cart is empty!"
+  resetLinkText="Get back to the home page"
+  resetLinkRoute="/"
+></app-not-found>
 
-      <div>
-        <select
-          #quantitySelect
-          (change)="changeQuantity(cartItem, quantitySelect.value)"
-        >
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>
-      <div>
-        {{ cartItem.price | currency }}
-      </div>
+<div *ngIf="cart && cart.items.length > 0">
+  <div class="container">
+    <div class="cart__items-display">
+      <ul>
+        <li *ngFor="let cartItem of cart.items">
+          <div>
+            <a routerLink="/product/{{ cartItem.product.id }}">
+              <img [src]="cartItem.product.image" alt="" />
+            </a>
+          </div>
+          <div>
+            <a>
+              {{ cartItem.product.title }}
+            </a>
+          </div>
 
-      <div>
-        <button class="remove-button" (click)="removeFromCart(cartItem)">
-          Remove
-        </button>
-      </div>
-    </li>
-  </ul>
+          <div>
+            <select
+              #quantitySelect
+              (change)="changeQuantity(cartItem, quantitySelect.value)"
+            >
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div>
+            {{ cartItem.price | currency }}
+          </div>
 
-  <div class="checkout">
-    <div>
-      <div class="product-count">
-        {{ cart.products.length }}
-      </div>
-      <div class="total-price">
-        {{ cart.totalPrice }}
+          <div>
+            <button
+              class="remove-button"
+              (click)="removeFromCart(cartItem)"
+              class="cta"
+            >
+              Remove
+            </button>
+          </div>
+        </li>
+      </ul>
+
+      <div class="checkout">
+        <div class="total-price">
+          {{ cart.totalPrice | currency }}
+        </div>
       </div>
     </div>
   </div>

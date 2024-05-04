@@ -1,50 +1,45 @@
-<div class="container">
-  <div class="hero__wrapper">
-    <div class="hero-wrapper-txt">
-      <h1>Ovo je imagineShop</h1>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit error
-        consectetur, ducimus laudantium similique quam? Et repellat nesciunt
-        laudantium officiis?
-      </p>
+<div class="hero__bg-wrapper">
+  <div class="container">
+    <div class="hero__wrapper">
+      <div class="hero-wrapper-txt">
+        <h1>This is <span>imagineShop</span></h1>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit error
+          consectetur, ducimus laudantium similique quam? Et repellat nesciunt
+          laudantium officiis?
+        </p>
+        <button class="cta hero-cta" routerLink="/products">
+          view products
+        </button>
+      </div>
     </div>
   </div>
+</div>
 
-  <div class="discount__products">
+<div class="discount__products">
+  <div class="container">
     <div class="discount__products-text-wrapper">
-      <h2>Popust.</h2>
+      <h2>Discount</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. A molestiae
         sint harum, illum maxime tenetur rerum? Magni ipsum, magnam perspiciatis
         odit provident aperiam nostrum earum!
       </p>
     </div>
-    <!-- <div class="discount__products-slider">
-      <swiper-container
-        class="mySwiper"
-        pagination="true"
-        navigation="true"
-        space-between="30"
-        slides-per-view="3"
-      >
-        <swiper-slide>
-        
-        </swiper-slide>
-      </swiper-container>
-    </div> -->
     <div class="discount__product-card-wrapper">
-      <li *ngFor="let product of products | slice : 0 : 4">
-        <div class="discount__product-image">
-          <img [src]="product.image" alt="{{ product.name }}" />
-        </div>
-        <div class="discount__product-text-content">
-          {{ product.title }}
-          {{ product.price | currency }}
-          {{ product.rating }}
-          {{ product.description }}
-        </div>
-        <a routerLink="/products" class="discount__product-button">
-          Show more
+      <li
+        *ngFor="let product of products | slice : 0 : 4"
+        class="discount__product-card"
+      >
+        <a routerLink="/product/{{ product.id }}">
+          <div class="discount__product-image">
+            <img [src]="product.image" alt="{{ product.name }}" />
+          </div>
+          <div class="discount__product-text-content">
+            <p>{{ product.title }}</p>
+            <p>{{ product.price | currency }}</p>
+            <button class="cta discount__product-card-cta">Show more</button>
+          </div>
         </a>
       </li>
     </div>

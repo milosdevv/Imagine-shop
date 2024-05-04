@@ -5,12 +5,13 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule, Routes } from '@angular/router';
+import { Router, RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductItemComponent } from './pages/product-page/product-item/product-item.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { ContactComponent } from './pages/contact-page/contact.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
+import { MapComponent } from './pages/landing-page/map/map.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -31,8 +32,10 @@ const routes: Routes = [
     FooterComponent,
     ContactComponent,
     NotFoundComponent,
+    MapComponent,
   ],
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(routes)],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

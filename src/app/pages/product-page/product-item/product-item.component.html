@@ -1,20 +1,21 @@
-<ng-container>
-  <ul class="grid">
+<div class="container">
+  <ul class="products__display">
     <li *ngFor="let product of products">
-      <a routerLink="/product/{{ product.id }}">
-        <div
-          class="product__list-item"
-          [ngClass]="{ active: product.isActive }"
-          (click)="toggleActive(product)"
-        >
+      <div
+        class="product__list-item"
+        [ngClass]="{ active: product.isActive }"
+        (click)="toggleActive(product, $event)"
+      >
+        <a routerLink="/product/{{ product.id }}" class="product__item-cart">
           <img [src]="product.image" alt="{{ product.name }}" />
           <p>{{ product.title }}</p>
           <p>{{ product.name }} - {{ product.price | currency }}</p>
-          <p>{{ product.description }}</p>
           <p>{{ product.category }}</p>
-          <button (click)="addToCart()">Add to cart</button>
-        </div>
-      </a>
+        </a>
+        <button (click)="addToCart()" class="cta" routerLink="/cart-page">
+          Add to cart
+        </button>
+      </div>
     </li>
   </ul>
-</ng-container>
+</div>

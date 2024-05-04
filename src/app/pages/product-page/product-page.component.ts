@@ -1,7 +1,5 @@
-import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { Product } from '../../Model/Product';
-import { CartService } from '../../services/cart.service';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({

@@ -1,19 +1,110 @@
-.container {
-  max-width: 1280px;
-  width: 100%;
-  margin: auto;
+// @import "variables.scss";
+@keyframes hue {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
+
+.hero__bg-wrapper {
+  background: black;
+
+  video {
+    width: 50%;
+  }
+
   .hero__wrapper {
     display: flex;
     align-items: center;
     height: 100vh;
-  }
+    h1 {
+      font-size: 68px;
+      text-transform: uppercase;
+      font-weight: 300;
+      letter-spacing: 8px;
+      color: #fff;
+      margin: 0;
 
+      span {
+        font-weight: 600;
+        background-image: -webkit-linear-gradient(145deg, #a2fe73, #35fdb2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-animation: hue 10s infinite linear;
+      }
+    }
+    p {
+      color: #fff;
+    }
+
+    .hero-cta {
+      background-image: linear-gradient(145deg, #a2fe73, #35fdb2);
+      background-clip: text;
+      color: transparent;
+      animation: hue 10s infinite linear;
+    }
+  }
+}
+
+.discount__products {
+  padding: 50px 0;
   .discount__product-card-wrapper {
     display: flex;
     gap: 50px;
+    align-items: center;
+    justify-content: center;
+    .discount__product-card {
+      border-radius: 20px;
+      padding: 15px 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #fff;
+      width: 25%;
+      a {
+        text-decoration: none;
+      }
+    }
+    .discount__product-image {
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     img {
-      width: 300px;
-      height: 300px;
+      width: 150px;
+      height: 150px;
+    }
+
+    .discount__product-text-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      :nth-child(2) {
+        color: rgb(171, 171, 218);
+        font-size: 18px;
+      }
+      p {
+        margin: 0;
+      }
+
+      .discount__product-card-cta {
+        display: flex;
+        justify-content: center;
+      }
     }
   }
 }
