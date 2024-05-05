@@ -38,6 +38,14 @@ export class ProductItemComponent implements OnInit {
       console.log('Product ID:', productId);
       this.getProducts();
       this.getProductDetails(productId);
+      this.productService.getProducts().subscribe(
+        (products) => {
+          console.log('Products:', products);
+        },
+        (error) => {
+          console.error('Error fetching products:', error);
+        }
+      );
     });
   }
 

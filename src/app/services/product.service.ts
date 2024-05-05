@@ -7,7 +7,7 @@ import { Product } from '../Model/Product';
   providedIn: 'root',
 })
 export class ProductServiceService {
-  private apiUrl = 'https://fakestoreapi.com/products';
+  private apiUrl = 'https://api.escuelajs.co/api/v1/products';
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<Product[]> {

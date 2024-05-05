@@ -7,10 +7,9 @@
         (click)="toggleActive(product, $event)"
       >
         <a routerLink="/product/{{ product.id }}" class="product__item-cart">
-          <img [src]="product.image" alt="{{ product.name }}" />
+          <img [src]="product.images[0]" alt="{{ product.name }}" />
           <p>{{ product.title }}</p>
           <p>{{ product.name }} - {{ product.price | currency }}</p>
-          <p>{{ product.category }}</p>
         </a>
         <button (click)="addToCart()" class="cta" routerLink="/cart-page">
           Add to cart

@@ -1,12 +1,12 @@
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
-  gap: 16%;
+  gap: 8%;
   padding: 15px 0;
   background-color: white;
   z-index: 3;
@@ -25,8 +25,11 @@
     gap: 10px;
   }
 
-  .navbar__cta {
+  .navbar__icons {
+    padding: 8px 16px;
+    border-radius: 25px;
     display: flex;
     gap: 10px;
+    background-color: #f8f8f8;
   }
 }

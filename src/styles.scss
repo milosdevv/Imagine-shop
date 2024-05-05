@@ -43,8 +43,8 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: rgb(242, 242, 242);
+  font-family: poppins, "Helvetica Neue", sans-serif;
+  background-color: #fff;
 }
 
 // Custom styles
@@ -54,11 +54,22 @@ body {
   margin: auto;
 }
 
+@media screen and (max-width: 395px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
 .cta {
-  border: 1px solid #fff;
-  padding: 7px 12px;
+  padding: 12px 15px;
   outline: none;
-  border-radius: 10px;
-  font-size: 14px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
   cursor: pointer;
+  background-color: #111827;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }

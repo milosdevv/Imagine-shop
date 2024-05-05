@@ -5,6 +5,7 @@ export class Product {
     public productImage: string,
     public id: number,
     public price: number,
+    public category: string,
     public isActive?: boolean
   ) {}
 }
